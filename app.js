@@ -5,6 +5,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 // 引入测试路由
 const testRouter = require('./routes/test')
+// 引入菜单路由
+const menuRouter = require('./routes/menu')
+// 引入设备路由
+const deviceRouter = require('./routes/device')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -34,6 +38,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 // 挂载测试路由
 app.use('/test', testRouter)
+// 挂载菜单路由
+app.use('/menu', menuRouter)
+// 挂载设备路由
+app.use('device', deviceRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
