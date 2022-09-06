@@ -9,6 +9,8 @@ const testRouter = require('./routes/test')
 const menuRouter = require('./routes/menu')
 // 引入设备路由
 const deviceRouter = require('./routes/device')
+// 引入软件版本路由
+const softwareVersion = require('./routes/softwareVersion')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -41,7 +43,9 @@ app.use('/test', testRouter)
 // 挂载菜单路由
 app.use('/menu', menuRouter)
 // 挂载设备路由
-app.use('device', deviceRouter)
+app.use('/device', deviceRouter)
+// 挂载
+app.use('/software', softwareVersion)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
